@@ -76,6 +76,13 @@ Help me respond to the client in a way that redirects from "make slides" to "cho
 
 The private implementation uses a web dashboard, API backend, structured transformation pipeline, storage for sessions/history, and privacy-filtered telemetry. The public architecture summary is in [docs/architecture.md](docs/architecture.md).
 
+## Security And Privacy
+
+This repository is intentionally documentation-only. Do not put production
+prompts, telemetry, session data, secrets, or private user examples here. Report
+security concerns through GitHub private vulnerability reporting or the contact
+path in [SECURITY.md](SECURITY.md).
+
 ## Validation
 
 PromptTranslator was tested against real-world messy prompts from coaching, product, writing, and technical contexts. The useful signal was not “shorter prompts” alone; it was fewer avoidable follow-up rounds and clearer first responses.
