@@ -8,19 +8,19 @@
 
 ## Workflow and Git
 
-- Use a new task-named branch in an isolated worktree. Follow the branch and Conventional Commit formats in `AGENTS.md`; do not use an agent name as the branch prefix.
+- Work in an isolated task checkout: use a new worktree for local app work or the provider's isolated sandbox for cloud work. Follow the task-based branch and Conventional Commit formats in `AGENTS.md`; do not use an agent name as the branch prefix.
 - Keep the prose diff narrow, preserve the existing case-study voice and public/private boundary, verify all affected links, and stage only intended paths.
 - Never push directly to `main`, force-push `main`, merge a pull request, or bypass hooks. Open a pull request and wait for the required `ci` check before merge.
 - Resolve every review thread or explain the evidence for rejecting it. Copilot review is advisory and does not replace CI or owner approval.
 
 ## Dependencies and security
 
-- This repository has no application dependency manifest. Do not add a top-level dependency, package manifest, lockfile, build system, or lifecycle script without explicit approval from the owner and the required AndersSecurity dependency record.
+- This repository has no application dependency manifest. Do not add a top-level dependency, package manifest, lockfile, build system, or lifecycle script without explicit approval from the owner and a repository-local security rationale in the pull request.
 - Never commit secrets, credentials, telemetry, user prompts, production code, private validation examples, or generated artifacts.
 
 ## Repository commands
 
-There is no application build, lint, or unit-test suite. Use the repository's available documentation checks when their tools are already installed:
+There is no application build or unit-test suite. Use the repository's pre-commit lint/hygiene and documentation checks when their tools are already installed:
 
 ```bash
 gitleaks detect --config .gitleaks.toml
@@ -32,4 +32,4 @@ The assembled-context drift check documented in `AGENTS.md` depends on shared lo
 
 ## Review priorities
 
-Prioritize silent failures, boundary validation, tests, security, unresolved review threads. Also review accidental private disclosure, unsupported product claims, broken links, and prose that erodes the public/private boundary.
+Prioritize silent failures, boundary validation, tests when present (otherwise the documented checks and CI), security, unresolved review threads. Also review accidental private disclosure, unsupported product claims, broken links, and prose that erodes the public/private boundary.
